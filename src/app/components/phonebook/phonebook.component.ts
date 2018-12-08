@@ -4,8 +4,7 @@ import { CommentsService } from "src/app/services/comments.service";
 
 @Component({
   selector: "app-phonebook",
-  templateUrl: "./phonebook.component.html",
-  styleUrls: ["./phonebook.component.scss"]
+  templateUrl: "./phonebook.component.html"
 })
 export class PhonebookComponent implements OnInit {
   records: Record[] = null;
