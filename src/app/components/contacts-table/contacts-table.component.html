@@ -1,0 +1,36 @@
+<table>
+  <thead>
+    <tr>
+      <td class="clickable" (click)="sortByPostId()">
+        <span *ngIf="!sortUp" class="arrow">&uarr;</span
+        ><span *ngIf="sortUp" class="arrow">&darr;</span>PostId
+      </td>
+      <td>Id</td>
+      <td>Name</td>
+      <td>Email</td>
+      <td>Text</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let record of records; let i = index">
+      <td>{{ record.postId }}</td>
+      <td>{{ record.id }}</td>
+      <td>{{ record.name }}</td>
+      <td>{{ record.email }}</td>
+      <td>{{ record.body }}</td>
+    </tr>
+    <tr
+      *ngIf="!loading && (!records || records.length === 0)"
+      id="noDataRecord"
+    >
+      <td colspan="5">No Data to Display</td>
+    </tr>
+    <tr *ngIf="loading" id="loadingRecord">
+      <td colspan="5">
+        <div id="outer-circle"><div id="inner-circle"></div></div>
+        <div class="text">Loading Please Wait...</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
